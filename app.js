@@ -10,10 +10,12 @@ function getActivity(){
 }
 
 function successFunction(request){
-    document.getElementById(`activity_container`).insertAdjacentElement(`beforeend`, `
-    <h1>${request.activity}</h1>
-    <h2>$${request.price}</h2>
-    <h3><a src="${request.link}"</h3>
+    console.log(request)
+    document.getElementById(`activity_container`).innerHTML = ``;
+    document.getElementById(`activity_container`).insertAdjacentHTML(`beforeend`, `
+    <h1>${request.data.activity}</h1>
+    <h2>$${request.data.price}</h2>
+    <h3><a href="${request.data.link}">${request.data.link}</a></h3>
     `)
 }
 
